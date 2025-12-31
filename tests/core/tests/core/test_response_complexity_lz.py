@@ -77,7 +77,7 @@ class StreamSystem:
 
 # --- RUN EXPERIMENT ---
 
-steps = 500
+steps = 150
 shock_time = 30
 shock_vector = np.array([5.0, 0.0, 0.0])
 
