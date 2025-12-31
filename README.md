@@ -1,5 +1,22 @@
 # Embodied Conscious Coherence (ECC)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Status](https://img.shields.io/badge/status-experimental-orange.svg)]()
+
+Embodied Conscious Coherence (ECC) is an exploratory research framework
+investigating how artificial agents maintain stable, coherent behavior when
+embedded in dynamic environments.
+
+ECC approaches coherence as a problem of dynamical regulation, rather than
+intelligence, language, or subjective experience. The framework focuses on
+architectural constraints such as embodiment, stream binding, perturbation
+response, and regulated recovery.
+
+This repository does not claim to create conscious or sentient artificial
+systems. It provides exploratory tools and simulations for studying robustness
+and stability in embodied agent architectures.
+
 **Status:** Early-stage research prototype  
 **Author:** [Mehar Imam]  
 **License:** MIT
@@ -67,6 +84,7 @@ First published: 2025
 ## Citation
 If you build upon or reference this work, please cite:
 
-Mehar Imam. *Embodied Conscious Coherence (ECC): A Control-Theoretic Research Prototype*, 2025.# embodied-conscious-coherence
+Mehar Imam. *Embodied Conscious Coherence (ECC): A Control-Theoretic Research Prototype*, 2025.
+# embodied-conscious-coherence
 An exploratory control-theoretic research prototype for embodied, coherent agents
 https://github.com/im-mehar4/embodied-conscious-coherence
