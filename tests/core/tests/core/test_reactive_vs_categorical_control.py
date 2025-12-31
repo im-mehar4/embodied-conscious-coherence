@@ -96,27 +96,32 @@ coherent_sim = CartPoleSimulation("coherent")
 for t in range(steps):
     coherent_sim.step(t)
 
-# --- VISUALIZATION ---
+# --- VISUALIZATION REFACTOR ---
 
-plt.figure(figsize=(12, 6))
+fig, axes = plt.subplots(1, 3, figsize=(18, 5))
 
-# Plot Zombie
-plt.subplot(2, 1, 1)
-plt.plot(zombie_sim.history, color='red', alpha=0.8, label="Pole Angle")
-plt.title(f"Agent A: The Zombie (Raw Reactive)\nVariance: {np.var(zombie_sim.history):.5f}")
-plt.ylim(-0.5, 0.5)
-plt.axhline(0, color='black', alpha=0.3)
-plt.legend()
-plt.grid(True, alpha=0.3)
+for i, (name, data) in enumerate(history.items()):
+    data = np.array(data)
+    ax = axes[i]
+    
+    # Plot the 3 Streams
+    ax.plot(data[:, 0], label='Sensory', color='red', linewidth=2, alpha=0.8)
+    ax.plot(data[:, 1], label='Somatic', color='green', linewidth=2, alpha=0.8)
+    ax.plot(data[:, 2], label='Symbolic', color='blue', linestyle='--', linewidth=2)
+    
+    ax.axvline(x=shock_time, color='black', linestyle=':', label='Shock Event')
+    ax.set_title(name)
+    ax.grid(True, alpha=0.3)
+    
+    # FIX: Different scales for different regimes
+    if name == "Unstable (Explosive)":
+        # Let this one autoscale so we see the "Latching" effect (it will go up to ~20)
+        ax.set_ylim(-2, 25) 
+        ax.text(shock_time + 5, 20, "SYSTEM LATCHED", color='red', fontsize=10, fontweight='bold')
+    else:
+        ax.set_ylim(-2, 8) # Focused view for stable systems
 
-# Plot Coherent
-plt.subplot(2, 1, 2)
-plt.plot(coherent_sim.history, color='blue', alpha=0.8, label="Pole Angle")
-plt.title(f"Agent B: Embodied Coherent (Symbolic Governor)\nVariance: {np.var(coherent_sim.history):.5f}")
-plt.ylim(-0.5, 0.5)
-plt.axhline(0, color='black', alpha=0.3)
-plt.legend()
-plt.grid(True, alpha=0.3)
+    if i == 0: ax.legend(loc='upper right')
 
 plt.tight_layout()
 plt.show()
