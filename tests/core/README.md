@@ -24,5 +24,5 @@ Test 4: Post-Perturbation Response Complexity
 
 ## Deferred Tests
 
-Additional tests exploring edge cases (e.g., deafferentation, input severing)
-are under development and intentionally withheld to preserve conceptual clarity.
+Additional tests (e.g., deafferentation, input severing) are under development and excluded pending clearer operational definitions.
+
