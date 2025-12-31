@@ -18,7 +18,7 @@ systems. It provides exploratory tools and simulations for studying robustness
 and stability in embodied agent architectures.
 
 **Status:** Early-stage research prototype  
-**Author:** [Mehar Imam]  
+**Author:** Mehar Imam  
 **License:** MIT
 
 ## Overview
